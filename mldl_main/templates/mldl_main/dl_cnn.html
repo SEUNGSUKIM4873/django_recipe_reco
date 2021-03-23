@@ -1,0 +1,38 @@
+{% extends 'mldl_main/base.html' %}
+{% block content %}
+
+
+<form action="{% url 'mldl_main:predict_cnn' %}" method="POST" enctype="multipart/form-data" class="main-form" style="width: 60%;">
+  {% csrf_token %}
+
+  <div style='text-align: center; margin-top: 10%;'>
+    <h1><label for="input_file"> Please upload your image</label></h1>
+    <p style=' text-align: end; margin-right: 1em; height: 1em;'>
+      <a href="https://imgur.com/Fq0blXC" target="_blank" class="file-link">
+        Download a sample file : 28x28x1
+      </a>
+    </p>
+    <p style=' text-align: end; margin-right: 1em; height: 1em;'>
+      <a href="https://imgur.com/Pg7oS4C" target="_blank" class="file-link">
+        Download a sample file : 500x500x3
+      </a>
+    </p>
+  </div>
+
+  <div class="filebox bs3-primary preview-image" style="text-align: center; margin-top: 15%; margin-bottom: 10%;">
+		<input class="upload-name" value="selected file" disabled="disabled" style="width: 200px;">
+
+		<label for="input_file" style="font-weight:500;">selecte file</label>
+	  <input type="file" id="input_file" class="upload-hidden" name="img_uploaded">
+	</div>
+
+  <button type="submit" class="btn btn-lg btn-info btn-confirm btn-submit"> Predict! </button>
+
+</form>
+
+<div style='text-align: center; margin-top:3em; margin-bottom:4em;'>
+  <p><a href="{% url 'mldl_main:index' %}">Home</a></p>
+</div>
+
+
+{% endblock %}

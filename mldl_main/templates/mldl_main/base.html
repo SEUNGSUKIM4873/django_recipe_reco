@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ML/DL Prediction examples (version 1.0)</title>
+  <link rel="shortcut icon" href="{% static 'mldl_main/images/favicon.ico' %}">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans&display=swap" rel="stylesheet">
+
+  <link rel='stylesheet' type='text/css' href="{% static 'mldl_main/style.css' %}" /> <!-- user-css -->
+
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="{% url 'mldl_main:index' %}" class="navbar-index-link">
+          <span class="navbar-brand">For your cooking life! </span>
+          </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href = "{% url 'mldl_main:dl_cnn' %}">Ingredient predict</a></li>
+          <!-- <li class="navbar-right"><a href = "{% url 'admin:index' %}">Administrator</a></li> -->
+        </ul>
+      </div>
+    </nav>
+<div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">Copyright ⓒ 2021 LIKE LION | FINAL 5 TEAM | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'mldl_main/style.js' %}"></script> <!-- user-js -->
+
+</body>
+</html>

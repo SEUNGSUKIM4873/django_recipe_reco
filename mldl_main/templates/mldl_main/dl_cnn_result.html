@@ -1,0 +1,33 @@
+{% extends 'mldl_main/base.html' %}
+{% block content %}
+
+
+<div style='width:60%; margin: auto; text-align: center;'>
+  {% if uploaded_file_url %}
+    <img src="{{ uploaded_file_url }}" class="img-subject" style="width: 50%;"/>
+  {% endif %}
+</div>
+
+<div style='text-align: center;'>
+  <h1>This ingredient is
+    <span class="predicted-class" style="color:black;">{{ predict_result }}</span>
+  </h1>
+</div>
+ <br>
+
+<div style='text-align: center;'>
+  <h2 style="color:black;"> <span font size="20px"> What you have is </span>
+    <span style="color:black;"> {{ save_ingredient_list }}</span>
+  </h2>
+</div>
+
+
+ <br><br><div style='text-align: center; margin-top:2em; margin-bottom:3em;'>
+   <p><a href="{% url 'mldl_main:recommend_recipe'%}"> What can you cook with these ingredients? </a></p>
+   <p><a href="{% url 'mldl_main:delete_cnn' file_name=uploaded_file_name %}">Delete your image & Return to home</a></p>
+ </div>
+
+
+
+
+{% endblock %}

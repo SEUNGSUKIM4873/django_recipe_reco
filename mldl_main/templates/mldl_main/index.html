@@ -1,0 +1,18 @@
+{% extends 'mldl_main/base.html' %}
+{% block content %}
+
+<div class="row" style="margin-top:10%;float:center;">
+  <center><div class="col-md-6"style="margin-left:25%;" >
+    <div class="jumbotron" style="background-color: black;">
+      <h1 style="color: white;font-size:3em">AI recommends recipe <br> </h1>
+      <br><p style="color: dimgray;"> AI will let you know the best recipe <br>the best recipe.</p>
+      <br><p><a class="btn btn-default btn-lg" href="{% url 'mldl_main:dl_cnn' %}" role="button">Now let's start!</a></p>
+    </div>
+</div>
+</center>
+</div>
+
+{% endblock %}
+<!-- <div class="col-md-6" style="margin-top:2%;">
+ <p><a href="{% url 'mldl_main:dl_mnist' %}">CNN 모델 예측 (Tensorflow)</a></p>
+</div> -->

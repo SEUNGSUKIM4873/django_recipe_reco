@@ -1,0 +1,21 @@
+{% extends 'mldl_main/base.html' %}
+{% block content %}
+
+
+<div style='text-align: center;'>
+  <h1><br>
+    <span font size="22px" fstyle="color:black;"> It's time to cook !</span>
+  </h1>
+</div>
+<br>
+
+
+<div>
+  <center>{{recommend_recipe_result | safe}}</center>
+</div>
+
+
+<div style='text-align: center; margin-top:3em; margin-bottom:4em;'>
+  <p><a href="{% url 'mldl_main:recommend_delete' %}"> Delete the list & Return to home</a></p>
+</div>
+{% endblock %}
